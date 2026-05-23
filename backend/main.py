@@ -61,7 +61,7 @@ def root():
     }
 
 
-@app.get("/search")
+@app.get("/api/search")
 def search(
     q: str = Query(default="", description="検索キーワード"),
     full: bool = Query(default=False, description="True にすると本文も検索（発展課題）"),
