@@ -1,0 +1,7 @@
+.venv/
+_pycache_/
+.env
+*.db
+migrate_db.py
+seed_data.py
+schema.sql
