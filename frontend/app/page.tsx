@@ -39,7 +39,6 @@ export default function SearchPage() {
       const url = new URL("/api/search", API_URL);
       url.searchParams.set("q", query);
       const res = await fetch(url.toString());
-    }
     
       if (!res.ok) {
         const err = await res.json();
