@@ -36,10 +36,11 @@ export default function SearchPage() {
     setLastQuery(query);
 
     try {
-      const res = await fetch(
-        `${API_URL}/api/search?q=${encodeURIComponent(query)}`
-      );
-
+      const url = new URL("/api/search", API_URL);
+      url.searchParams.set("q", query);
+      const res = await fetch(url.toString());
+    }
+    
       if (!res.ok) {
         const err = await res.json();
         throw new Error(err.error ?? `HTTP ${res.status}`);
